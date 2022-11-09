@@ -35,16 +35,8 @@ grammar_checker("Hello") => false
 grammar_checker("Hello?") => true
 grammar_checker("Hello!") => true
 
-grammar_checker("hello!") => false
-grammar_checker("hello?") => false
-
-grammar_checker("hello") => false
-grammar_checker("Hello, world!") => true
-grammar_checher("Hello, world") => false
-grammar_checker("hello, world!") => false
-grammar_checker("hello, world") => false
 grammar_checker("") => "This text is empty."
-grammar_checker(nil) => fail
+
 
 ```
 

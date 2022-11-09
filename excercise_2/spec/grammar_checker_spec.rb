@@ -17,7 +17,12 @@ RSpec.describe "grammar checker method" do
       result = grammar_checker("Hello?")
       expect(result).to eq true
     end
-    
+
+    it "when string is 'Hello!'" do
+      result = grammar_checker("Hello!")
+      expect(result).to eq true
+    end
+ 
   end
 
   context "returns false" do
@@ -30,7 +35,16 @@ RSpec.describe "grammar checker method" do
       result = grammar_checker("Hello")
       expect(result).to eq false
     end
+  end
 
+  context "returns fail" do
+    it "when nil" do
+      expect { grammar_checker(nil) }.to raise_error "Invalid nil value"
+    end
+
+    it "when string is ''" do
+      expect { grammar_checker("")}.to raise_error "Invalid nil value"
+    end
   end
 
 end
