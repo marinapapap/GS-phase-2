@@ -32,7 +32,6 @@ _Make a list of examples of what the method will take and return._
 string_checker("#TODO") => true
 string_checker("hello") => false
 string_checker("#TODO hello") => true
-string_checker("hello world") => false
 string_checker("") => false
 string_checker(nil) => fail
 
