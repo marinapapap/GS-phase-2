@@ -11,43 +11,28 @@ RSpec.describe GrammarStats do
         expect(result).to eq 1
       end
     end
+
+    context "returns false" do
+      it "when string is 'hello.'" do
+        stats = GrammarStats.new
+        result = stats.check("hello.")
+        expect(result).to eq false
+      end
+    end
+
+    context "returns fail" do
+      it "when nil" do
+        stats = GrammarStats.new
+        expect { stats.check(nil) }.to raise_error "Invalid nil value"
+      end
+  
+      it "when string is ''" do
+        stats = GrammarStats.new
+        expect { stats.check("")}.to raise_error "Invalid nil value"
+      end
+    end
+
   end
-
-  #   it "when string is 'Hello?'" do
-  #     result = check("Hello?")
-  #     expect(result).to eq true
-  #   end
-
-  #   it "when string is 'Hello!'" do
-  #     result = check("Hello!")
-  #     expect(result).to eq true
-  #   end
- 
-  # end
-
-  # context "returns false" do
-  #   it "when string is 'hello.'" do
-  #     result = check("hello.")
-  #     expect(result).to eq false
-  #   end
-
-  #   it "when string is 'Hello'" do
-  #     result = check("Hello")
-  #     expect(result).to eq false
-  #   end
-  # end
-
-  # context "returns fail" do
-  #   it "when nil" do
-  #     expect { check(nil) }.to raise_error "Invalid nil value"
-  #   end
-
-  #   it "when string is ''" do
-  #     expect { check("")}.to raise_error "Invalid nil value"
-  #   end
-  # end
-
-  # end
 
   describe "#percentage_good" do
 

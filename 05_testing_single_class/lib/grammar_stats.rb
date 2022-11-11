@@ -6,9 +6,9 @@ class GrammarStats
 
   def check(text) # text is a string
     @count += 1
-    # if text == nil || text == ""
-    #   fail "Invalid nil entry"
-    # end
+    if text == nil || text == ""
+      fail "Invalid nil value"
+    end
     
     first_letter = text[0]
     last_char = text[-1]
