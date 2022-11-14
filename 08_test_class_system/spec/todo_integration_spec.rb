@@ -8,4 +8,8 @@ RSpec.describe TodoList do
     todo_list.add(item)
     expect(todo_list.incomplete).to eq [item]
   end
+
+  it "returns list of completed tasks" do
+    
+  end
 end
